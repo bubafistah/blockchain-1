@@ -38,6 +38,7 @@ set (CMAKE_LINKER ld CACHE FILEPATH "" FORCE)
 set (CMAKE_RC_COMPILER windres)
 
 set (CMAKE_FIND_ROOT_PATH "${MSYS2_FOLDER}/mingw64")
+set (CMAKE_PREFIX_PATH "${MSYS2_FOLDER}/mingw64/lib/pkgconfig")
 
 message(STATUS "Msys folder set as ${MSYS2_FOLDER}")
 message(STATUS "CMake prefix path ${CMAKE_PREFIX_PATH}")
