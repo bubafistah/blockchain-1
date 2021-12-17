@@ -206,9 +206,14 @@ if (MINGW)
   # library is implicit with a link in msys).
   find_library(win32pthread
     NAMES libwinpthread-1.dll)
-  foreach (input IN LISTS win32pthread OPENSSL_LIBRARIES)
+
+  if (NOT win32pthread)
+    message(STATUS "libwinpthread not found, setting manualy")
+    set(win32pthread "${MSYS2_FOLDER}/mingw64/bin/libwinpthread-1.dll")
+  endif()
     # Copy shared libraries into the build tree so that no PATH manipulation is
     # necessary.
+	foreach (input IN LISTS win32pthread OPENSSL_LIBRARIES)
     get_filename_component(name "${input}" NAME)
     configure_file(
       "${input}"
