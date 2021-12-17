@@ -346,6 +346,13 @@ if (UNIX AND NOT APPLE)
   find_package(Threads)
 endif()
 
+if (WIN32)
+find_library(win32pthread
+    NAMES libwinpthread-1.dll)
+  if (NOT win32pthread)
+					message(STATUS "win32pthread notfound")
+	endif()
+endif()
 add_definitions(-DAUTO_INITIALIZE_EASYLOGGINGPP)
 
 add_subdirectory(external)
