@@ -38,6 +38,7 @@ set (CMAKE_LINKER ld CACHE FILEPATH "" FORCE)
 set (CMAKE_RC_COMPILER windres)
 
 set (CMAKE_FIND_ROOT_PATH "${MSYS2_FOLDER}/mingw64")
+set (OPENSSL_ROOT_DIR "${MSYS2_FOLDER}/mingw64")
 
 # Ensure cmake doesn't find things in the wrong places
 set (CMAKE_FIND_ROOT_PATH_MODE_PROGRAM NEVER) # Find programs on host
