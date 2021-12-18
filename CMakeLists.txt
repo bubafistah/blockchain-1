@@ -33,14 +33,8 @@ endif()
 
 
 if (WIN32)
-  include(FetchContent)
-  
-  FetchContent_Declare(
-    Boost
-    GIT_REPOSITORY https://github.com/boostorg/boost.git
-    GIT_TAG        9ccd3390c8e9ef05f4cb681d15b2e14eac48886e 
-  )
-  
+  set(BOOST_URL https://github.com/boostorg/boost/archive/refs/tags/boost-1.58.0.tar.gz)
+  set(BOOST_URL_SHA256 3aa597324978bd7aa5a3d73d65187540793192942c8b299973c5ccf0904b474f)
   add_subdirectory(boost-cmake)
 endif()
 
