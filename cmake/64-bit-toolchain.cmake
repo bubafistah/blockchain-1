@@ -43,6 +43,14 @@ set (CMAKE_PREFIX_PATH "${MSYS2_FOLDER}/mingw64/lib/pkgconfig")
 message(STATUS "Msys folder set as ${MSYS2_FOLDER}")
 message(STATUS "CMake prefix path ${CMAKE_PREFIX_PATH}")
 
+message(STATUS "AMS conpiler target ${CMAKE_ASM_COMPILER_TARGET}")
+message(STATUS "Compiler target ${CMAKE_CXX_COMPILER_TARGET}")
+
+set(CMAKE_ASM_COMPILER_TARGET "${CMAKE_CXX_COMPILER_TARGET}")
+
+message(STATUS "AMS conpiler target ${CMAKE_ASM_COMPILER_TARGET}")
+message(STATUS "Compiler target ${CMAKE_CXX_COMPILER_TARGET}")
+
 # Ensure cmake doesn't find things in the wrong places
 set (CMAKE_FIND_ROOT_PATH_MODE_PROGRAM NEVER) # Find programs on host
 set (CMAKE_FIND_ROOT_PATH_MODE_LIBRARY ONLY) # Find libs in target
