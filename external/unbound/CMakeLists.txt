@@ -213,7 +213,7 @@ if (MINGW)
   endif()
     # Copy shared libraries into the build tree so that no PATH manipulation is
     # necessary.
-	foreach (input IN LISTS win32pthread OPENSSL_LIBRARIES)
+	foreach (input IN LISTS win32pthread)
     get_filename_component(name "${input}" NAME)
     configure_file(
       "${input}"
