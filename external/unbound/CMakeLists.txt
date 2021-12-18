@@ -37,6 +37,7 @@ include(configure_checks.cmake)
 if (WIN32)
   set(USE_MINI_EVENT 1)
   set(USE_WINSOCK 1)
+  set(HAVE_DECL_INET_NTOP 1)
 else ()
   find_package(PkgConfig REQUIRED)
   set(USE_MINI_EVENT 1)
@@ -60,6 +61,7 @@ if (CMAKE_USE_WIN32_THREADS_INIT)
 else ()
   set(HAVE_WINDOWS_THREADS 0)
 endif ()
+
 configure_file(
   "${CMAKE_CURRENT_SOURCE_DIR}/config.h.cmake.in"
   "${CMAKE_CURRENT_BINARY_DIR}/config.h")
