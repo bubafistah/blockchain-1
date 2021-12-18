@@ -50,13 +50,3 @@ set (CMAKE_FIND_ROOT_PATH_MODE_INCLUDE ONLY) # Find includes in target
 
 set (MINGW_FLAG "-m64")
 set (USE_LTO_DEFAULT false)
-
-include(FetchContent)
-
-FetchContent_Declare(
-  Boost
-  GIT_REPOSITORY https://github.com/boostorg/boost.git
-  GIT_TAG        9ccd3390c8e9ef05f4cb681d15b2e14eac48886e 
-)
-
-add_subdirectory(boost-cmake)

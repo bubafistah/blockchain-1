@@ -31,6 +31,19 @@ if (IOS)
     INCLUDE(CmakeLists_IOS.txt)
 endif()
 
+
+if (WIN32)
+  include(FetchContent)
+  
+  FetchContent_Declare(
+    Boost
+    GIT_REPOSITORY https://github.com/boostorg/boost.git
+    GIT_TAG        9ccd3390c8e9ef05f4cb681d15b2e14eac48886e 
+  )
+  
+  add_subdirectory(boost-cmake)
+endif()
+
 cmake_minimum_required(VERSION 2.8.7)
 
 project(monero)
