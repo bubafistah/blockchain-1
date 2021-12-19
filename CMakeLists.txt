@@ -31,13 +31,6 @@ if (IOS)
     INCLUDE(CmakeLists_IOS.txt)
 endif()
 
-
-if (WIN32)
-  set(BOOST_URL https://github.com/boostorg/boost/archive/refs/tags/boost-1.58.0.tar.gz)
-  set(BOOST_URL_SHA256 3aa597324978bd7aa5a3d73d65187540793192942c8b299973c5ccf0904b474f)
-  add_subdirectory(boost-cmake)
-endif()
-
 cmake_minimum_required(VERSION 2.8.7)
 
 project(monero)
