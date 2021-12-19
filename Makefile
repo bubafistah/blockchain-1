@@ -113,7 +113,7 @@ release-static-win32:
 	cd build/release && cmake -G "MSYS Makefiles" -D STATIC=ON -D ARCH="i686" -D BUILD_64=OFF -D CMAKE_BUILD_TYPE=Release -D BUILD_TAG="win-x32" -D CMAKE_TOOLCHAIN_FILE=../../cmake/32-bit-toolchain.cmake MSYS2_FOLDER=$(shell cd ${MINGW_PREFIX}/.. && pwd -W) ../.. && $(MAKE)
 
 release-static-win64-boost:
-	cd boost && ./bootstrap.sh && ./b2 --prefix=../external/boost_1_69_0 --layout=system address-model=64 runtime-link=static link=static variant=release --with-system --with-filesystem --with-thread --with-date_time --with-chrono --with-regex --with-serialization --with-program_options install
+	cd boost && ./bootstrap.sh && ./b2 --prefix=$(shell pwd)/../external/boost_1_69_0 --layout=system address-model=64 runtime-link=static link=static variant=release --with-system --with-filesystem --with-thread --with-date_time --with-chrono --with-regex --with-serialization --with-program_options install
 
 fuzz:
 	mkdir -p build/fuzz

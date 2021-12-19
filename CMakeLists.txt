@@ -656,7 +656,7 @@ if (WIN32)
 
 set(Boost_DEBUG 1)
 set(Boost_NO_SYSTEM_PATHS ON)
-set(BOOST_ROOT "${CMAKE_SOURCE_DIR}/external/boost_1_69_0")
+set(BOOST_ROOT "${CMAKE_SOURCE_DIR}/external")
 
 endif()
 
