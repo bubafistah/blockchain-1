@@ -30,6 +30,7 @@
 #include <cstdio>
 #include <algorithm>
 #include <fstream>
+#include <stdexcept>
 
 #include <boost/filesystem.hpp>
 #include "misc_log_ex.h"

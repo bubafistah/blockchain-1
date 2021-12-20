@@ -18,6 +18,7 @@
 #include "JsonValue.h"
 #include <iomanip>
 #include <sstream>
+#include <stdexcept>
 
 namespace Common {
 

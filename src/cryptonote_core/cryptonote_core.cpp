@@ -32,6 +32,7 @@
 using namespace epee;
 
 #include <unordered_set>
+#include <stdexcept>
 #include "cryptonote_core.h"
 #include "common/command_line.h"
 #include "common/util.h"
