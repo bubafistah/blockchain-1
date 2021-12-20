@@ -16,7 +16,7 @@
 // along with Bytecoin.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "SerializationOverloads.h"
-
+#include <stdexcept>
 #include <limits>
 
 namespace CryptoNote {
