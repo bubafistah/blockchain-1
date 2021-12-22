@@ -42,6 +42,7 @@
 #include <malloc.h>
 #include <windows.h>
 
+#pragma message("MDB NOT USING PTHREAD!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
 /* We use native NT APIs to setup the memory map, so that we can
  * let the DB file grow incrementally instead of always preallocating
  * the full size. These APIs are defined in <wdm.h> and <ntifs.h>
@@ -158,6 +159,7 @@ typedef SSIZE_T	ssize_t;
 #endif
 
 #ifndef _WIN32
+#pragma message("MDB USING PTHREAD!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
 #include <pthread.h>
 #ifdef MDB_USE_POSIX_SEM
 # define MDB_USE_HASH		1

@@ -61,6 +61,8 @@ if (CMAKE_USE_WIN32_THREADS_INIT)
 else ()
   set(HAVE_WINDOWS_THREADS 0)
 endif ()
+
+message(STATUS "ubound have_pthread : ${HAVE_PTHREAD} have_windows_threads: ${HAVE_WINDOWS_THREADS}")
 configure_file(
   "${CMAKE_CURRENT_SOURCE_DIR}/config.h.cmake.in"
   "${CMAKE_CURRENT_BINARY_DIR}/config.h")

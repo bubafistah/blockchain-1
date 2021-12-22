@@ -390,6 +390,7 @@ ELPP_INTERNAL_DEBUGGING_OUT_INFO << ELPP_INTERNAL_DEBUGGING_MSG(internalInfoStre
 #      include <thread>
 #  else
 #      if ELPP_OS_UNIX
+#pragma message("EASY LOGGING USING PTHREAD!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
 #         include <pthread.h>
 #      endif  // ELPP_OS_UNIX
 #  endif  // ELPP_USE_STD_THREADING

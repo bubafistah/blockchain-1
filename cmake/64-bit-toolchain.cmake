@@ -44,5 +44,5 @@ set (CMAKE_FIND_ROOT_PATH_MODE_PROGRAM NEVER) # Find programs on host
 set (CMAKE_FIND_ROOT_PATH_MODE_LIBRARY ONLY) # Find libs in target
 set (CMAKE_FIND_ROOT_PATH_MODE_INCLUDE ONLY) # Find includes in target
 
-set (MINGW_FLAG "-m64")
+set (MINGW_FLAG "-m64 -mthread")
 set (USE_LTO_DEFAULT false)
