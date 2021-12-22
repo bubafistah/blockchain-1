@@ -50,5 +50,6 @@ set (MINGW_FLAG "-m64")
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -mthreads")
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -mthreads")
 set(LDFLAGS "${LDFLAGS} --as-needed")
-
+set(CMAKE_C_IMPLICIT_LINK_LIBRARIES "mingwthrd;mingw32;gcc;moldname;mingwex;kernel32;advapi32;shell32;user32;kernel32;mingwthrd;mingw32;gcc;moldname;mingwex;kernel32")
+set(CMAKE_CXX_IMPLICIT_LINK_LIBRARIES "stdc++;mingwthrd;mingw32;gcc_s;gcc;moldname;mingwex;kernel32;advapi32;shell32;user32;kernel32;mingwthrd;mingw32;gcc_s;gcc;moldname;mingwex;kernel32")
 set (USE_LTO_DEFAULT false)
