@@ -39,6 +39,7 @@ set (CMAKE_RC_COMPILER windres)
 
 set (CMAKE_FIND_ROOT_PATH "${MSYS2_FOLDER}/mingw64")
 
+
 # Ensure cmake doesn't find things in the wrong places
 set (CMAKE_FIND_ROOT_PATH_MODE_PROGRAM NEVER) # Find programs on host
 set (CMAKE_FIND_ROOT_PATH_MODE_LIBRARY ONLY) # Find libs in target
@@ -48,5 +49,6 @@ set (MINGW_FLAG "-m64")
 
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -mthreads")
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -mthreads")
+set(LDFLAGS "${LDFLAGS} --as-needed")
 
 set (USE_LTO_DEFAULT false)
