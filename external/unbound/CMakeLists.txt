@@ -30,7 +30,12 @@ cmake_minimum_required(VERSION 2.8.7)
 
 project(unbound C)
 
+if (NOT WIN32 AND NOT MINGW)
 find_package(Threads)
+else()
+	set(CMAKE_USE_PTHREADS_INIT 0)
+	set(CMAKE_USE_WIN32_THREADS_INIT 1)
+endif()
 
 include(configure_checks.cmake)
 

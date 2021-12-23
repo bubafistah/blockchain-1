@@ -32,7 +32,12 @@ project(easylogging CXX)
 
 SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 
+if (NOT WIN32 AND NOT MINGW)
 find_package(Threads)
+else()
+	set(CMAKE_USE_PTHREADS_INIT 0)
+	set(CMAKE_USE_WIN32_THREADS_INIT 1)
+endif()
 
 add_library(easylogging
   easylogging++.cc)
