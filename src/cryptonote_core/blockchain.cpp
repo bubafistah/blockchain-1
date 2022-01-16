@@ -3329,6 +3329,7 @@ leave:
 			bvc.m_verifivation_failed = true;
 			goto leave;
 		}
+		  MERROR_VER("Checking new block PoW " << proof_of_work);
 	}
     }
   }
