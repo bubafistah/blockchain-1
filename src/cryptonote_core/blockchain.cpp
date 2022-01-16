@@ -1123,6 +1123,10 @@ bool Blockchain::create_block_template(block& b, const account_public_address& m
 	  b.parent_block.major_version = BLOCK_MAJOR_VERSION_1;
 	  b.parent_block.minor_version = 0;
 	  b.parent_block.number_of_transactions = 1;
+
+	  // ADDED
+	  b.parent_block.prev_id = get_tail_id();
+
 	  //create MM tag
 	  tx_extra_merge_mining_tag mm_tag = boost::value_initialized<decltype(mm_tag)>();
 	  if (!append_mm_tag_to_extra(b.parent_block.miner_tx.extra, mm_tag)) {
@@ -1130,7 +1134,10 @@ bool Blockchain::create_block_template(block& b, const account_public_address& m
 		  return false;
 	  }
   }
-  else
+  else if (b.major_version == BLOCK_MAJOR_VERSION_1) {
+	  // ADDED
+	  b.parent_block.minor_version = 0;
+  }else
 	b.minor_version = m_hardfork->get_ideal_version();
 
   b.prev_id = get_tail_id();
@@ -3304,6 +3311,7 @@ leave:
     {
       precomputed = true;
       proof_of_work = it->second;
+	  MERROR_VER("Checking sync PoW " << proof_of_work);
         // validate proof_of_work versus difficulty target
         if(!check_hash(proof_of_work, current_diffic))
         {

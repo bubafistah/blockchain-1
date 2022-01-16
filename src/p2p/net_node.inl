@@ -409,7 +409,7 @@ namespace nodetool
     std::set<std::string> full_addrs;
     if (testnet) //CHANGE ME
     {
-		full_addrs.insert("88.99.61.2:38772"); // rick.nodes.lthn.io
+		full_addrs.insert("88.99.61.2:38777"); // rick.nodes.lthn.io
     }
     else
     {
