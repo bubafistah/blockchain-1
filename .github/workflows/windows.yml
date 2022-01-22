@@ -8,6 +8,7 @@ on:
 
 env:
   REMOVE_BUNDLED_BOOST : rm -rf /usr/local/share/boost
+  LETHEAN_VERSION : 4.0.0
   CCACHE_SETTINGS: |
         ccache --max-size=150M
         ccache --set-config=compression=true
@@ -38,11 +39,11 @@ jobs:
       run: |
         ${{env.CCACHE_SETTINGS}}
         make release-static-win64-boost
-        make release-static-win64 -j2
+        make release-static-win64 -DLETHEAN_VERSION=${{ env.LETHEAN_VERSION }} -j2
     - uses: actions/upload-artifact@v2
       with:
         name: windows-bin
-        path: ${{ github.workspace }}/build/release/bin
+        path: ${{ github.workspace }}/build/${{ env.LETHEAN_VERSION }}/release/bin
 
 
 
