@@ -39,11 +39,11 @@ jobs:
       run: |
         ${{env.CCACHE_SETTINGS}}
         make release-static-win64-boost
-        make release-static-win64 -DLETHEAN_VERSION=${{ env.LETHEAN_VERSION }} -j2
+        make release-static-win64 -DLETHEAN_VERSION=${{env.LETHEAN_VERSION}} -j2
     - uses: actions/upload-artifact@v2
       with:
         name: windows-bin
-        path: ${{ github.workspace }}/build/${{ env.LETHEAN_VERSION }}/release/bin
+        path: ${{ github.workspace }}/build/${{env.LETHEAN_VERSION}}/release/bin
 
 
 

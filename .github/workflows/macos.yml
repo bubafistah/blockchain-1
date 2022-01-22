@@ -43,11 +43,11 @@ jobs:
     - name: build
       run: |
         ${{env.CCACHE_SETTINGS}}
-        make release-static-mac-x86_64 -DLETHEAN_VERSION=${{ env.LETHEAN_VERSION }} -j${HOMEBREW_MAKE_JOBS}
+        make release-static-mac-x86_64 -DLETHEAN_VERSION=${{env.LETHEAN_VERSION}} -j${HOMEBREW_MAKE_JOBS}
     - uses: actions/upload-artifact@v2
       with:
         name: macos-bin
-        path: ${{ github.workspace }}/build/${{ env.LETHEAN_VERSION }}release/bin
+        path: ${{ github.workspace }}/build/${{env.LETHEAN_VERSION}}/release/bin
 
 
   source-archive:

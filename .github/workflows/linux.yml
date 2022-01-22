@@ -49,11 +49,11 @@ jobs:
     - name: build
       run: |
         ${{env.CCACHE_SETTINGS}}
-        ${{env.BUILD_DEFAULT_LINUX}} -DLETHEAN_VERSION=${{ env.LETHEAN_VERSION }}
+        ${{env.BUILD_DEFAULT_LINUX}} -DLETHEAN_VERSION=${{env.LETHEAN_VERSION}}
     - uses: actions/upload-artifact@v2
       with:
         name: linux-bin
-        path: ${{ github.workspace }}/build/${{ env.LETHEAN_VERSION }}/release/bin
+        path: ${{ github.workspace }}/build/${{env.LETHEAN_VERSION}}/release/bin
 
   source-archive:
     runs-on: ubuntu-20.04
