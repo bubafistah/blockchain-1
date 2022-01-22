@@ -8,7 +8,7 @@ on:
 
 env:
   REMOVE_BUNDLED_BOOST : rm -rf /usr/local/share/boost
-  LETHEAN_VERSION : 4.0.0
+  LETHEAN_VERSION : xxx
   CCACHE_SETTINGS: |
         ccache --max-size=150M
         ccache --set-config=compression=true
